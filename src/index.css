@@ -4,13 +4,17 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #121212;
+  background-color: #121212;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a {
@@ -33,6 +37,45 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: space-between;
+  background-color: #e0e0e0;
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 300px;
+}
+
+input {
+  border-radius: 8px;
+  height: 2em;
+  width: 100%;
+  padding: 4px;
+  transition: box-shadow 0.3s ease;
+}
+
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px hsla(220, 100%, 50%, 80%);
+}
+
+label {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.form-question {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+h2.form-heading {
+  margin: 0px;
 }
 
 button {
