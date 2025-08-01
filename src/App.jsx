@@ -1,11 +1,22 @@
 import "./App.css";
-import Button from "./components/Button.jsx";
+import { useState } from "react";
 import GeneralInfo from "./components/GeneralInfo.jsx";
+import CV from "./components/CV.jsx";
 
 function App() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    location: "",
+  });
+
   return (
     <>
-      <GeneralInfo />
+      <div className="edit-info">
+        <GeneralInfo formData={formData} setFormData={setFormData} />
+      </div>
+      <CV formData={formData}></CV>
     </>
   );
 }
