@@ -2,7 +2,9 @@ import "./App.css";
 import { useState } from "react";
 import GeneralInfo from "./components/GeneralInfo.jsx";
 import CV from "./components/CV.jsx";
-import EducationForm from "./components/EducationForm.jsx";
+// import EducationForm from "./components/EducationForm.jsx";
+import EducationList from "./components/EducationList.jsx";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [formData, setFormData] = useState({
@@ -14,6 +16,7 @@ function App() {
 
   const [educationList, setEducationList] = useState([
     {
+      id: uuidv4(),
       school: "University of Amsterdam",
       degree: "Bachelor of Psychology",
       startDate: "01.09.2022",
@@ -22,11 +25,20 @@ function App() {
     },
   ]);
 
+  function updateEducationItem(id, updatedItem) {
+    setEducationList((prev) =>
+      prev.map((item) => (item.id === id ? updatedItem : item))
+    );
+  }
+
   return (
     <>
       <div className="edit-info">
         <GeneralInfo formData={formData} setFormData={setFormData} />
-        <EducationForm educationInfoItem={educationList[0]} />
+        <EducationList
+          educationList={educationList}
+          updateEducationItem={updateEducationItem}
+        />
       </div>
       <CV formData={formData} educationList={educationList}></CV>
     </>
