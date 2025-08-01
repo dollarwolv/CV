@@ -7,6 +7,7 @@ export default function GeneralInfo({ formData, setFormData }) {
           <label htmlFor="name">Full name</label>
           <input
             type="text"
+            id="name"
             name="name"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -16,6 +17,7 @@ export default function GeneralInfo({ formData, setFormData }) {
           <label htmlFor="email">Email</label>
           <input
             type="text"
+            id="email"
             name="email"
             value={formData.email}
             onChange={(e) =>
@@ -27,6 +29,7 @@ export default function GeneralInfo({ formData, setFormData }) {
           <label htmlFor="phone">Phone number</label>
           <input
             type="text"
+            id="phone"
             name="phone"
             value={formData.phone}
             onChange={(e) =>
@@ -38,6 +41,7 @@ export default function GeneralInfo({ formData, setFormData }) {
           <label htmlFor="location">Location</label>
           <input
             type="text"
+            id="location"
             name="location"
             value={formData.location}
             onChange={(e) =>

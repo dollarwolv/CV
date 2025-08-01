@@ -1,6 +1,6 @@
 import "../styles/CV.css";
 
-export default function CV({ formData }) {
+export default function CV({ formData, educationList }) {
   return (
     <div className="main-cv-container">
       <section className="header">

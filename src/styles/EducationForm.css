@@ -1,0 +1,7 @@
+.collapsed-education-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e0e0e0;
+  color: #121212;
+}
