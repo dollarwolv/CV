@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: #e0e0e0;
-  background-color: #121212;
+  background-color: #1a2a80;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,8 +28,8 @@ a:hover {
 
 body {
   margin: 0;
+  margin-top: 24px;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -44,11 +44,12 @@ form {
   flex-direction: column;
   gap: 8px;
   justify-content: space-between;
-  background-color: #e0e0e0;
+  background-color: #b2b0e8;
   padding: 20px;
   border-radius: 12px;
   min-width: 300px;
   color: #121212;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 input {
@@ -57,6 +58,11 @@ input {
   width: 100%;
   padding: 4px;
   transition: box-shadow 0.3s ease;
+  background-color: #3b38a0;
+  color: white;
+  font-size: 1em;
+  font-weight: 400;
+  font-family: Avenir;
 }
 
 :focus {
@@ -86,7 +92,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #3b38a0;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -116,8 +122,21 @@ button:focus-visible {
   flex-direction: column;
   gap: 12px;
   margin-top: 12px;
-  background-color: #e0e0e0;
+  background-color: #b2b0e8;
   border-radius: 4px;
   padding: 12px;
   color: #121212;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* default state ─ keep it hidden and collapsed */
+.edu-wrapper {
+  max-height: 48px;
+  overflow: hidden;
+  transition: max-height 500ms ease;
+}
+
+/* when the form is visible */
+.edu-wrapper.expanded {
+  max-height: 1000px; /* any value larger than the form  */
 }

@@ -15,7 +15,7 @@ export default function EducationForm({
   }
 
   return (
-    <>
+    <div className={isSubmitted ? "edu-wrapper" : "edu-wrapper expanded"}>
       {!isSubmitted ? (
         <form className="education-form" onSubmit={handleSubmit}>
           {keys.map(
@@ -57,6 +57,6 @@ export default function EducationForm({
           <button onClick={() => setIsSubmitted(false)}>Edit</button>
         </div>
       )}
-    </>
+    </div>
   );
 }
