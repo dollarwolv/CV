@@ -25,14 +25,37 @@ function App() {
     },
   ]);
 
+  const [jobList, setJobList] = useState([
+    {
+      id: uuidv4(),
+      company: "Los Pollos Hermanos",
+      title: "Manager",
+      jobDescription:
+        "During my time at Los Polles Hermanos, I oversaw the entire operations of the restaurant. I also spearheaded the launch of a new product, increasing profits by 50.000%.",
+      startDate: "01/2008",
+      endDate: "09/2013",
+      location: "Albuquerque, N.M.",
+    },
+  ]);
+
   function updateEducationItem(id, updatedItem) {
     setEducationList((prev) =>
       prev.map((item) => (item.id === id ? updatedItem : item))
     );
   }
 
+  function updateJobItem(id, updatedItem) {
+    setJobList((prev) =>
+      prev.map((item) => (item.id === id ? updatedItem : item))
+    );
+  }
+
   function deleteEducationItem(id) {
     setEducationList((prev) => prev.filter((item) => item.id !== id));
+  }
+
+  function deleteJobItem(id) {
+    setJobList((prev) => prev.filter((item) => item.id !== id));
   }
 
   function addEducation() {
@@ -49,6 +72,21 @@ function App() {
     ]);
   }
 
+  function addJob() {
+    setJobList((prev) => [
+      ...prev,
+      {
+        id: uuidv4(),
+        company: "New Job",
+        title: "",
+        jobDescription: "",
+        startDate: "",
+        endDate: "",
+        location: "",
+      },
+    ]);
+  }
+
   return (
     <>
       <div className="edit-info">
@@ -58,9 +96,21 @@ function App() {
           updateEducationItem={updateEducationItem}
           addEducation={addEducation}
           deleteEducationItem={deleteEducationItem}
+          type={"school"}
+        />
+        <EducationList
+          educationList={jobList}
+          updateEducationItem={updateJobItem}
+          addEducation={addJob}
+          deleteEducationItem={deleteJobItem}
+          type={"work"}
         />
       </div>
-      <CV formData={formData} educationList={educationList}></CV>
+      <CV
+        formData={formData}
+        educationList={educationList}
+        jobList={jobList}
+      ></CV>
     </>
   );
 }

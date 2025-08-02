@@ -5,9 +5,11 @@ export default function EducationList({
   updateEducationItem,
   addEducation,
   deleteEducationItem,
+  type,
 }) {
   return (
     <div className="education-list">
+      {type === "school" ? <h2>Education</h2> : <h2>Work Experiences</h2>}
       {educationList.map((educationItem) => (
         <EducationForm
           key={educationItem.id}
@@ -16,7 +18,7 @@ export default function EducationList({
           deleteEducationItem={deleteEducationItem}
         />
       ))}
-      <button onClick={() => addEducation()}>Add Education</button>
+      <button onClick={() => addEducation()}>Add Experience</button>
     </div>
   );
 }

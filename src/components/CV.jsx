@@ -1,6 +1,6 @@
 import "../styles/CV.css";
 
-export default function CV({ formData, educationList }) {
+export default function CV({ formData, educationList, jobList }) {
   return (
     <div className="main-cv-container">
       <section className="header">
@@ -19,6 +19,12 @@ export default function CV({ formData, educationList }) {
         </div>
         <CVEducationList educationList={educationList} />
       </section>
+      <section className="work">
+        <div className="work-header">
+          <h3>Work Experiences</h3>
+        </div>
+        <CVEducationList educationList={jobList} />
+      </section>
     </div>
   );
 }
@@ -27,7 +33,7 @@ function CVEducationList({ educationList }) {
   return (
     <>
       {educationList.map((item) => (
-        <div className="education-item">
+        <div className="education-item" key={item.id}>
           <div className="education-date-location">
             <div className="education-date">
               <span className="start-date">{item.startDate} - </span>
@@ -36,8 +42,13 @@ function CVEducationList({ educationList }) {
             <span className="education-location">{item.location}</span>
           </div>
           <div className="education-uni-degree">
-            <span className="education-uni">{item.school}</span>
-            <span className="education-degree">{item.degree}</span>
+            <span className="education-uni">{item.school || item.company}</span>
+            <span className="education-degree">
+              {item.degree || item.title}
+            </span>
+            {item.jobDescription && (
+              <span className="job-description">{item.jobDescription}</span>
+            )}
           </div>
         </div>
       ))}

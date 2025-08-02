@@ -32,13 +32,15 @@ h3 {
   margin: 0px;
 }
 
-.education {
+.education,
+.work {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.education-header {
+.education-header,
+.work-header {
   width: 90%;
   display: flex;
   justify-content: center;

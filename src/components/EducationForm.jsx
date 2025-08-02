@@ -18,7 +18,6 @@ export default function EducationForm({
     <>
       {!isSubmitted ? (
         <form className="education-form" onSubmit={handleSubmit}>
-          <h2 className="form-heading">Education</h2>
           {keys.map(
             (field) =>
               field !== "id" && (
@@ -53,7 +52,7 @@ export default function EducationForm({
       ) : (
         <div className="collapsed-education-info">
           <span className="education-item-title">
-            {educationInfoItem.school}
+            {educationInfoItem.school || educationInfoItem.company}
           </span>
           <button onClick={() => setIsSubmitted(false)}>Edit</button>
         </div>
