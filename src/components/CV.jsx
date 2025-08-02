@@ -18,25 +18,30 @@ export default function CV({ formData, educationList }) {
           <h3>Education</h3>
         </div>
         <div className="education-list"></div>
+        <CVEducationList educationList={educationList} />
       </section>
     </div>
   );
 }
 
-function EducationItem({ school, degree, startDate, endDate, location }) {
+function CVEducationList({ educationList }) {
   return (
-    <div className="education-item">
-      <div className="education-date-location">
-        <div className="education-date">
-          <span className="start-date">{startDate}</span> -
-          <span className="end-date">{endDate}</span>
+    <>
+      {educationList.map((item) => (
+        <div className="education-item">
+          <div className="education-date-location">
+            <div className="education-date">
+              <span className="start-date">{item.startDate} - </span>
+              <span className="end-date">{item.endDate}</span>
+            </div>
+            <span className="education-location">{item.location}</span>
+          </div>
+          <div className="education-uni-degree">
+            <span className="education-uni">{item.school}</span>
+            <span className="education-degree">{item.degree}</span>
+          </div>
         </div>
-        <span className="education-location">{location}</span>
-      </div>
-      <div className="education-uni-degree">
-        <span className="education-uni">{school}</span>
-        <span className="education-degree">{degree}</span>
-      </div>
-    </div>
+      ))}
+    </>
   );
 }

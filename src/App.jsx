@@ -19,8 +19,8 @@ function App() {
       id: uuidv4(),
       school: "University of Amsterdam",
       degree: "Bachelor of Psychology",
-      startDate: "01.09.2022",
-      endDate: "30.06.2025",
+      startDate: "09/2022",
+      endDate: "07/2025",
       location: "Amsterdam, NL",
     },
   ]);

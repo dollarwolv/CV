@@ -45,3 +45,22 @@ h3 {
   background-color: #e0e0e0;
   margin-top: 32px;
 }
+
+.education-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 90%;
+  column-gap: 18px;
+}
+
+.education-uni-degree,
+.education-date-location {
+  display: flex;
+  flex-direction: column;
+}
+
+.education-uni {
+  font-size: 1.1em;
+  font-weight: bold;
+}
