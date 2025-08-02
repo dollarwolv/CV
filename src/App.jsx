@@ -31,6 +31,24 @@ function App() {
     );
   }
 
+  function deleteEducationItem(id) {
+    setEducationList((prev) => prev.filter((item) => item.id !== id));
+  }
+
+  function addEducation() {
+    setEducationList((prev) => [
+      ...prev,
+      {
+        id: uuidv4(),
+        school: "New Education",
+        degree: "",
+        startDate: "",
+        endDate: "",
+        location: "",
+      },
+    ]);
+  }
+
   return (
     <>
       <div className="edit-info">
@@ -38,6 +56,8 @@ function App() {
         <EducationList
           educationList={educationList}
           updateEducationItem={updateEducationItem}
+          addEducation={addEducation}
+          deleteEducationItem={deleteEducationItem}
         />
       </div>
       <CV formData={formData} educationList={educationList}></CV>

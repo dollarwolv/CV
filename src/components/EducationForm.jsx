@@ -4,6 +4,7 @@ import "../styles/EducationForm.css";
 export default function EducationForm({
   educationInfoItem,
   updateEducationItem,
+  deleteEducationItem,
 }) {
   const keys = Object.keys(educationInfoItem);
   const [isSubmitted, setIsSubmitted] = useState(true);
@@ -42,6 +43,12 @@ export default function EducationForm({
               )
           )}
           <button type="submit">Done</button>
+          <button
+            onClick={() => deleteEducationItem(educationInfoItem.id)}
+            style={{ backgroundColor: "red" }}
+          >
+            Delete Education
+          </button>
         </form>
       ) : (
         <div className="collapsed-education-info">

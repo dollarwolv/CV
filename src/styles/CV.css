@@ -44,6 +44,7 @@ h3 {
   justify-content: center;
   background-color: #e0e0e0;
   margin-top: 32px;
+  margin-bottom: 12px;
 }
 
 .education-item {
@@ -63,4 +64,8 @@ h3 {
 .education-uni {
   font-size: 1.1em;
   font-weight: bold;
+}
+
+.education-date-location {
+  min-width: 140px;
 }

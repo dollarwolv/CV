@@ -17,7 +17,6 @@ export default function CV({ formData, educationList }) {
         <div className="education-header">
           <h3>Education</h3>
         </div>
-        <div className="education-list"></div>
         <CVEducationList educationList={educationList} />
       </section>
     </div>
